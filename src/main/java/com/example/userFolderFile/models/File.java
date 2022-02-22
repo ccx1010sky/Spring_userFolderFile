@@ -21,7 +21,7 @@ public class File {
     private  int size;
 
     @ManyToOne
-    @JoinColumn(value = "folder_id",nullable = false)
+    @JoinColumn(name = "folder_id",nullable = false)
     @JsonIgnoreProperties({"file"})
     private Folder folder;
 
