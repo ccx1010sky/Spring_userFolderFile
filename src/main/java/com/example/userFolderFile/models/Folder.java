@@ -16,16 +16,16 @@ public class Folder {
 
     @Column(name = "title")
     private String title;
-
+//------------------------------------------------
+    @JsonIgnoreProperties({"folder"})
     @ManyToOne
     @JoinColumn(name = "user_id",nullable = false)
-    @JsonIgnoreProperties({"folder"})
     private User user;
-
-    @OneToMany(mappedBy = "folder", fetch = FetchType.LAZY)
+//---------------------------------------
     @JsonIgnoreProperties({"folder"})
+    @OneToMany(mappedBy = "folder", fetch = FetchType.LAZY)
     private List<File> files;
-
+//---------------------------------------------------
     public Folder(String title, User user) {
         this.title = title;
         this.user = user;

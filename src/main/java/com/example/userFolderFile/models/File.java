@@ -19,11 +19,12 @@ public class File {
 
     @Column(name = "size")
     private  int size;
-
+//----------------------------------
+    @JsonIgnoreProperties({"file"})
     @ManyToOne
     @JoinColumn(name = "folder_id",nullable = false)
-    @JsonIgnoreProperties({"file"})
     private Folder folder;
+//    ----------------------------------------
 
     public File(String name, String extension, int size, Folder folder) {
         this.name = name;

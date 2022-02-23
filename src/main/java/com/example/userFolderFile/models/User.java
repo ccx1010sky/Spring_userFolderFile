@@ -16,11 +16,12 @@ public class User {
 
     @Column
     private String name;
+//----------------------------------------
 
     @OneToMany(mappedBy = "user",fetch = FetchType.LAZY)
-    @JsonIgnoreProperties
+    @JsonIgnoreProperties({"user"})
     private List<Folder> folders;
-
+//---------------------------------------------------------
 
 //setup constructor;
     public User(String name) {
